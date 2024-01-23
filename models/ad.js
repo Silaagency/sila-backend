@@ -53,6 +53,10 @@ const adSchema = new Schema ({
     remark: {
         type: String
     },
+    totalCost: {
+        type: Number,
+        required: true
+    },
     status: {
         type: String,
         default: 'Pending'
