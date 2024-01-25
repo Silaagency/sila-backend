@@ -143,4 +143,23 @@ router.patch('/changeProfilePhoto/:id', upload.single('profilePhoto'), async (re
     }
 });
 
+router.patch('/wallet/:id', async (req, res, next) => {
+    const userID = req.params.id;
+    const update = req.body;
+
+    update.wallet = req.body.wallet;
+
+    try {
+        const docs = await users.findByIdAndUpdate(userID, {$set: update}, {new: true});
+        res.json({
+            Success: 'Updated wallet!',
+            update: docs
+        })
+    } catch (err) {
+        res.json({
+            Error: err.message
+        })
+    }
+});
+
 module.exports = router;

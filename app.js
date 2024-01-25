@@ -8,6 +8,8 @@ const mongoose = require('mongoose');
 //Imported routes:
 const ad = require('./routes/ad');
 const users = require('./routes/users');
+const transaction = require('./routes/transaction');
+const paymentHistory = require('./routes/paymentHistory');
 //
 
 
@@ -27,6 +29,8 @@ app.use(cors());
 //Activating routes:
 app.use('/ad', ad);
 app.use('/users', users);
+app.use('/transaction', transaction);
+app.use('/paymentHistory', paymentHistory);
 //
 
 
