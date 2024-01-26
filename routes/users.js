@@ -22,6 +22,21 @@ router.get('/', async (req, res, next) => {
     }
 });
 
+router.get('/:id', async (req, res, next) => {
+    const userID = req.params.id;
+
+    try {
+        const docs = await users.findById(userID);
+        res.json({
+            user: docs
+        })
+    } catch (err) {
+        res.json({
+            Error: err.message
+        })
+    }
+});
+
 //cloudinary config for cloud file storing:
 cloudinary.config({ 
     cloud_name: 'ddegvayfv', 

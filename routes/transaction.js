@@ -44,7 +44,8 @@ router.post('/', upload.single('photoProof'), async (req, res, next) => {
         transactionID: req.body.transactionID,
         photoProof: req.file.path,
         email: req.body.email,
-        phoneNumber: req.body.phoneNumber
+        phoneNumber: req.body.phoneNumber,
+        userName: req.body.userName
     });
 
     try {
@@ -68,6 +69,25 @@ router.delete('/:id', async (req, res, next) => {
         res.json({
             Success: 'Deleted successfully!',
             deleted: docs
+        })
+    } catch (err) {
+        res.json({
+            Error: err.message
+        })
+    }
+});
+
+router.patch('/:id', async (req, res, next) => {
+    const transactionID = req.params.id;
+    const update = req.body;
+
+    update.status = req.body.status;
+
+    try {
+        const docs = await transaction.findByIdAndUpdate(transactionID, {$set: update}, {new: true});
+        res.json({
+            Success: 'Updated successfully!',
+            update: docs
         })
     } catch (err) {
         res.json({

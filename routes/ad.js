@@ -86,4 +86,27 @@ router.delete('/:id', async (req, res, next) => {
     }
 });
 
+
+
+////////////////THIS IS A PUSH TEST
+router.post('/pushTest/:id', async (req, res, next) => {
+    const licenseID = req.params.id;
+    const pageURL = req.body.pageURL;
+
+    try {
+        const license = await ad.findById(licenseID);
+        license.pageURL.push(pageURL);
+        const docs = await ad.create(license);
+        res.json({
+            Success: 'Pushed!',
+            push: docs
+        });
+    } catch (err) {
+        res.json({
+            Error: err.message
+        })
+    }
+});
+////////////////////////////
+
 module.exports = router;
