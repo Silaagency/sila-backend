@@ -57,6 +57,18 @@ const adSchema = new Schema ({
         type: Number,
         required: true
     },
+    userID: {
+        type: String,
+        required: true
+    },
+    email: {
+        type: String,
+        required: true
+    },
+    phoneNumber: {
+        type: Number,
+        required: true
+    },
     status: {
         type: String,
         default: 'Pending'
