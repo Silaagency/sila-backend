@@ -48,6 +48,10 @@ const adSchema = new Schema ({
         adDeposit: {
             type: Number,
             required: true
+        },
+        adID: {
+            type: String,
+            required: true
         }
     }],
     remark: {

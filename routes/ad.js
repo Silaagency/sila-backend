@@ -51,7 +51,8 @@ router.post('/', upload.single('shopifyScreenshot'), async (req, res, next) => {
         adNumber: req.body.adNumber,
         ads: req.body.ads.map((x) => ({
             adName: x.adName,
-            adDeposit: x.adDeposit
+            adDeposit: x.adDeposit,
+            adID: x.adID
         })),
         remark: req.body.remark || '',
         totalCost: req.body.totalCost,
@@ -82,118 +83,6 @@ router.delete('/:id', async (req, res, next) => {
             Success: 'AD deleted successfully!',
             deleted: docs
         })
-    } catch (err) {
-        res.json({
-            Error: err.message
-        })
-    }
-});
-
-router.patch('/:id', async (req, res, next) => {
-    const adID = req.params.id;
-    const update = req.body;
-
-    try {
-        const docs = await ad.findByIdAndUpdate(adID, {$set: update}, {new: true});
-        res.json({
-            Success: 'Updated!',
-            update: docs
-        })
-    } catch (err) {
-        res.json({
-            Error: err.message
-        })
-    }
-});
-
-router.patch('/shopify/:id', upload.single('shopifyScreenshot'), async (req, res, next) => {
-    const adID = req.params.id;
-    const update = req.body;
-
-    update.shopifyScreenshot = req.file.path;
-
-    try {
-        const docs = await ad.findByIdAndUpdate(adID, {$set: update}, {new: true});
-        res.json({
-            Success: 'Updated!',
-            update: docs
-        })
-    } catch (err) {
-        res.json({
-            Error: err.message
-        })
-    }
-});
-
-router.post('/pageURL/:id', async (req, res, next) => {
-    const licenseID = req.params.id;
-    const pageURL = req.body.pageURL;
-
-    try {
-        const license = await ad.findById(licenseID);
-        license.pageURL.push(pageURL);
-        const docs = await ad.create(license);
-        res.json({
-            Success: 'Pushed!',
-            push: docs
-        });
-    } catch (err) {
-        res.json({
-            Error: err.message
-        })
-    }
-});
-
-router.post('/domain/:id', async (req, res, next) => {
-    const licenseID = req.params.id;
-    const domainName = req.body.domainName;
-
-    try {
-        const license = await ad.findById(licenseID);
-        license.domainName.push(domainName);
-        const docs = await ad.create(license);
-        res.json({
-            Success: 'Pushed!',
-            push: docs
-        });
-    } catch (err) {
-        res.json({
-            Error: err.message
-        })
-    }
-});
-
-router.post('/appID/:id', async (req, res, next) => {
-    const licenseID = req.params.id;
-    const appID = req.body.appID;
-
-    try {
-        const license = await ad.findById(licenseID);
-        license.appID.push(appID);
-        const docs = await ad.create(license);
-        res.json({
-            Success: 'Pushed!',
-            push: docs
-        });
-    } catch (err) {
-        res.json({
-            Error: err.message
-        })
-    }
-});
-
-router.post('/ads/:id', async (req, res) => {
-    const licenseID = req.params.id;
-    const newAd = req.body;
-
-    try {
-        const license = await ad.findById(licenseID);
-        license.ads.push(newAd);
-        const docs = await ad.create(license);
-        res.json({
-            Success: 'Pushed!',
-            push: docs
-        });
     } catch (err) {
         res.json({
             Error: err.message
