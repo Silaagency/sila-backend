@@ -10,6 +10,8 @@ const ad = require('./routes/ad');
 const users = require('./routes/users');
 const transaction = require('./routes/transaction');
 const paymentHistory = require('./routes/paymentHistory');
+const refund = require('./routes/refund');
+const bmShare = require('./routes/bmShare');
 //
 
 
@@ -31,6 +33,8 @@ app.use('/ad', ad);
 app.use('/users', users);
 app.use('/transaction', transaction);
 app.use('/paymentHistory', paymentHistory);
+app.use('/refund', refund);
+app.use('/bmShare', bmShare);
 //
 
 

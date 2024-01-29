@@ -52,6 +52,10 @@ const adSchema = new Schema ({
         adID: {
             type: String,
             required: true
+        },
+        licenseName: {
+            type: String,
+            required: true
         }
     }],
     remark: {
