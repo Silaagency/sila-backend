@@ -75,6 +75,25 @@ router.post('/', upload.single('shopifyScreenshot'), async (req, res, next) => {
     }
 });
 
+router.patch('/:id', async (req, res, next) => {
+    const adID = req.params.id;
+    const update = req.body;
+
+    update.status = req.body.status;
+
+    try {
+        const docs = await ad.findByIdAndUpdate(adID, {$set: update}, {new: true});
+        res.json({
+            Success: 'Updated successfully!',
+            update: docs
+        })
+    } catch (err) {
+        res.json({
+            Error: err.message
+        })
+    }
+});
+
 router.delete('/:id', async (req, res, next) => {
     const adID = req.params.id;
 
