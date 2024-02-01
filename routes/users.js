@@ -158,6 +158,44 @@ router.patch('/changeProfilePhoto/:id', upload.single('profilePhoto'), async (re
     }
 });
 
+router.patch('/phone/:id', async (req, res, next) => {
+    const userID = req.params.id;
+    const update = req.body;
+
+    update.phoneNumber = req.body.phoneNumber;
+
+    try {
+        const docs = await users.findByIdAndUpdate(userID, {$set: update}, {new: true});
+        res.json({
+            Success: 'Updated!',
+            update: docs
+        })
+    } catch (err) {
+        res.json({
+            Error: err.message
+        })
+    }
+});
+
+router.patch('/userName/:id', async (req, res, next) => {
+    const userID = req.params.id;
+    const update = req.body;
+
+    update.userName = req.body.userName;
+
+    try {
+        const docs = await users.findByIdAndUpdate(userID, {$set: update}, {new: true});
+        res.json({
+            Success: 'Updated successfully!',
+            update: docs
+        })
+    } catch (err) {
+        res.json({
+            Error: err.message
+        })
+    }
+});
+
 router.patch('/wallet/:id', async (req, res, next) => {
     const userID = req.params.id;
     const update = req.body;
