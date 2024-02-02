@@ -25,10 +25,10 @@ router.get('/', async (req, res, next) => {
 
 //cloudinary config for cloud file storing:
 cloudinary.config({ 
-    cloud_name: 'ddegvayfv', 
-    api_key: '256687855467944', 
-    api_secret: 'Rkqrr0O_j7jFjfFKxV_pGxc7lYI' 
-  });
+  cloud_name: 'dkymtxsdl', 
+  api_key: '215615597633189', 
+  api_secret: 'NLVEsDjXrZfC0mf0bwoLOeTvyfo' 
+});
 
 const storage = new CloudinaryStorage({
     cloudinary: cloudinary
