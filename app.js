@@ -12,12 +12,12 @@ const transaction = require('./routes/transaction');
 const paymentHistory = require('./routes/paymentHistory');
 const refund = require('./routes/refund');
 const bmShare = require('./routes/bmShare');
-const supportChat = require('./routes/supportChat');
 //
 
 
 //Database config:
-mongoose.connect('mongodb://localhost:27017/sila');
+mongoose.connect('mongodb+srv://anes85594:UCjYa5EeJz5g1Mq5@cluster0.8lacwsn.mongodb.net/');
+// mongoose.connect('mongodb://localhost:27017/sila');
 
 const db = mongoose.connection
 
@@ -36,7 +36,6 @@ app.use('/transaction', transaction);
 app.use('/paymentHistory', paymentHistory);
 app.use('/refund', refund);
 app.use('/bmShare', bmShare);
-app.use('/support', supportChat);
 //
 
 
