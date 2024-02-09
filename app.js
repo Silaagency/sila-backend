@@ -13,6 +13,7 @@ const paymentHistory = require('./routes/paymentHistory');
 const refund = require('./routes/refund');
 const bmShare = require('./routes/bmShare');
 const contact = require('./routes/contact');
+const media = require('./routes/media');
 //
 
 
@@ -38,6 +39,7 @@ app.use('/paymentHistory', paymentHistory);
 app.use('/refund', refund);
 app.use('/bmShare', bmShare);
 app.use('/contact', contact);
+app.use('/media', media);
 //
 
 
