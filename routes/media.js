@@ -44,6 +44,9 @@ const upload = multer({ storage: storage });
 router.post('/', upload.array('media'), async (req, res, next) => {
     const mediaToPost = ({
         userID: req.body.userID,
+        userName: req.body.userName,
+        email: req.body.email,
+        phoneNumber: req.body.phoneNumber,
         media: req.files.map((x) => x.path),
         pack: req.body.pack,
         limit: req.body.limit
