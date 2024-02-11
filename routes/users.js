@@ -215,4 +215,23 @@ router.patch('/wallet/:id', async (req, res, next) => {
     }
 });
 
+router.patch('/eurWallet/:id', async (req, res, next) => {
+    const userID = req.params.id;
+    const update = req.body;
+
+    update.eurWallet = req.body.eurWallet;
+
+    try {
+        const docs = await users.findByIdAndUpdate(userID, {$set: update}, {new: true});
+        res.json({
+            Success: 'Updated wallet!',
+            update: docs
+        })
+    } catch (err) {
+        res.json({
+            Error: err.message
+        })
+    }
+});
+
 module.exports = router;

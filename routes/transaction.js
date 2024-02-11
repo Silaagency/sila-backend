@@ -39,6 +39,7 @@ const upload = multer({ storage: storage });
 router.post('/', upload.single('photoProof'), async (req, res, next) => {
     const transactionToPost = ({
         userID: req.body.userID,
+        currency: req.body.currency,
         paymentMethod: req.body.paymentMethod,
         chargeAmount: req.body.chargeAmount,
         transactionID: req.body.transactionID,
