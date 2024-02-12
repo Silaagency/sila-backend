@@ -14,6 +14,7 @@ const refund = require('./routes/refund');
 const bmShare = require('./routes/bmShare');
 const contact = require('./routes/contact');
 const media = require('./routes/media');
+const adminMedia = require('./routes/adminMedia');
 //
 
 
@@ -40,6 +41,7 @@ app.use('/refund', refund);
 app.use('/bmShare', bmShare);
 app.use('/contact', contact);
 app.use('/media', media);
+app.use('/adminMedia', adminMedia);
 //
 
 
