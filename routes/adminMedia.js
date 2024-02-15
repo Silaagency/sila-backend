@@ -32,9 +32,7 @@ cloudinary.config({
 const storage = new CloudinaryStorage({
     cloudinary: cloudinary,
     params: {
-        resource_type: 'auto',
-        use_filename: true,
-        unique_filename: false
+        resource_type: 'auto'
     }
 });
 
