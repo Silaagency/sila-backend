@@ -15,6 +15,7 @@ const bmShare = require('./routes/bmShare');
 const contact = require('./routes/contact');
 const media = require('./routes/media');
 const adminMedia = require('./routes/adminMedia');
+const sendMail = require('./routes/sendMail');
 //
 
 
@@ -42,6 +43,7 @@ app.use('/bmShare', bmShare);
 app.use('/contact', contact);
 app.use('/media', media);
 app.use('/adminMedia', adminMedia);
+app.use('/sendMail', sendMail);
 //
 
 
