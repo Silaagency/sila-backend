@@ -6,10 +6,6 @@ const bmShareSchema = new Schema ({
         type: String,
         required: true
     },
-    adID: {
-        type: String,
-        required: true
-    },
     adName: {
         type: String,
         required: true

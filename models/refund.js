@@ -10,10 +10,6 @@ const refundSchema = new Schema ({
         type: String,
         required: true
     },
-    adAccountID: {
-        type: String,
-        required: true
-    },
     refundReason: {
         type: String,
         required: true

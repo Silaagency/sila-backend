@@ -52,7 +52,6 @@ router.post('/', upload.single('shopifyScreenshot'), async (req, res, next) => {
         ads: req.body.ads.map((x) => ({
             adName: x.adName,
             adDeposit: x.adDeposit,
-            adID: x.adID,
             licenseName: x.licenseName
         })),
         remark: req.body.remark || '',

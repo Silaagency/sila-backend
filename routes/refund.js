@@ -23,7 +23,6 @@ router.post('/', async (req, res, next) => {
     const refundToPost = ({
         userID: req.body.userID,
         adAccountName: req.body.accountName,
-        adAccountID: req.body.accountID,
         refundReason: req.body.refundReason,
         amount: req.body.amount
     });

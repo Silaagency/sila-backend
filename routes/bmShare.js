@@ -22,7 +22,6 @@ router.get('/', async (req, res, next) => {
 router.post('/', async (req, res, next) => {
     const bmShareToPost = ({
         userID: req.body.userID,
-        adID: req.body.adID,
         adName: req.body.adName,
         bmID: req.body.bmID
     });
