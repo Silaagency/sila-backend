@@ -16,6 +16,8 @@ const contact = require('./routes/contact');
 const media = require('./routes/media');
 const adminMedia = require('./routes/adminMedia');
 const sendMail = require('./routes/sendMail');
+const shooting = require('./routes/shooting');
+const shootingLink = require('./routes/shootingLink');
 //
 
 
@@ -44,6 +46,8 @@ app.use('/contact', contact);
 app.use('/media', media);
 app.use('/adminMedia', adminMedia);
 app.use('/sendMail', sendMail);
+app.use('/shooting', shooting);
+app.use('/shootingLink', shootingLink);
 //
 
 
