@@ -20,6 +20,7 @@ const shooting = require('./routes/shooting');
 const shootingLink = require('./routes/shootingLink');
 const creativeVids = require('./routes/creativeVids');
 const creativeLink = require('./routes/creativeLink');
+const mediaLink = require('./routes/mediaLink');
 //
 
 
@@ -52,6 +53,7 @@ app.use('/shooting', shooting);
 app.use('/shootingLink', shootingLink);
 app.use('/creativeVids', creativeVids);
 app.use('/creativeLink', creativeLink);
+app.use('/mediaLink', mediaLink);
 //
 
 
