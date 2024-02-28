@@ -6,7 +6,7 @@ const creativeVidsSchema = new Schema ({
         type: String,
         required: true
     },
-    videos: {
+    video: {
         type: String,
         required: true
     },

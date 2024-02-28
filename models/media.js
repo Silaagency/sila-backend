@@ -18,16 +18,12 @@ const mediaSchema = new Schema ({
         type: Number,
         required: true
     },
-    media: [{
-        type: String,
-        required: true
-    }],
-    pack: {
+    media: {
         type: String,
         required: true
     },
-    limit: {
-        type: Number,
+    pack: {
+        type: String,
         required: true
     },
     date: {

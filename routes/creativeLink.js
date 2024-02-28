@@ -22,7 +22,8 @@ router.get('/', async (req, res, next) => {
 router.post('/', async (req, res, next) => {
     const creativeLinkToPost = ({
         userID: req.body.userID,
-        link: req.body.link
+        link: req.body.link,
+        linkName: req.body.linkName
     });
 
     try {

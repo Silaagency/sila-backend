@@ -1,8 +1,5 @@
 const express = require('express');
 const router = express.Router();
-const multer = require('multer');
-const cloudinary = require('cloudinary').v2;
-const { CloudinaryStorage } = require('multer-storage-cloudinary');
 
 //Imported models:
 const creativeVids = require('../models/creativeVids');
@@ -22,27 +19,10 @@ router.get('/', async (req, res, next) => {
     }
 });
 
-//cloudinary config for cloud file storing:
-cloudinary.config({ 
-    cloud_name: 'dkymtxsdl', 
-    api_key: '215615597633189', 
-    api_secret: 'NLVEsDjXrZfC0mf0bwoLOeTvyfo' 
-});
-
-const storage = new CloudinaryStorage({
-    cloudinary: cloudinary,
-    params: {
-        resource_type: 'auto'
-    }
-});
-
-const upload = multer({ storage: storage });
-//
-
-router.post('/', upload.single('videos'), async (req, res, next) => {
+router.post('/', async (req, res, next) => {
     const creativeVidsToPost = ({
         userID: req.body.userID,
-        videos: req.file.path,
+        video: req.body.video,
         userName: req.body.userName,
         email: req.body.email,
         phoneNumber: req.body.phoneNumber,

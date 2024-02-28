@@ -1,8 +1,5 @@
 const express = require('express');
 const router = express.Router();
-const multer = require('multer');
-const cloudinary = require('cloudinary').v2;
-const { CloudinaryStorage } = require('multer-storage-cloudinary');
 
 //Imported models:
 const media = require('../models/media');
@@ -22,32 +19,14 @@ router.get('/', async (req, res, next) => {
     }
 });
 
-//cloudinary config for cloud file storing:
-cloudinary.config({ 
-    cloud_name: 'dkymtxsdl', 
-    api_key: '215615597633189', 
-    api_secret: 'NLVEsDjXrZfC0mf0bwoLOeTvyfo' 
-});
-
-const storage = new CloudinaryStorage({
-    cloudinary: cloudinary,
-    params: {
-        resource_type: 'auto'
-    }
-});
-
-const upload = multer({ storage: storage });
-//
-
-router.post('/', upload.array('media'), async (req, res, next) => {
+router.post('/', async (req, res, next) => {
     const mediaToPost = ({
         userID: req.body.userID,
         userName: req.body.userName,
         email: req.body.email,
         phoneNumber: req.body.phoneNumber,
-        media: req.files.map((x) => x.path),
-        pack: req.body.pack,
-        limit: req.body.limit
+        media: req.body.media,
+        pack: req.body.pack
     });
 
     try {

@@ -10,6 +10,10 @@ const mediaLinkSchema = new Schema ({
         type: String,
         required: true
     },
+    linkName: {
+        type: String,
+        required: true
+    },
     date: {
         type: Date,
         default: Date.now
