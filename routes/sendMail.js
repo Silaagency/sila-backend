@@ -9,15 +9,15 @@ router.post('/', (req, res, next) => {
     const config = {
         service: 'gmail',
         auth: {
-            user: 'anes85594@gmail.com',
-            pass: 'qjxh jeyw loyo veif'
+            user: 'Silamarketingg@gmail.com',
+            pass: 'nqct ydan hhjv ohgz'
         }
     }
 
     const transporter = nodemailer.createTransport(config);
 
     const message = {
-        from: 'anes85594@gmail.com',
+        from: 'Silamarketingg@gmail.com',
         to: userEmail,
         subject: 'Welcome to Sila Agency!',
         html: `<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -271,15 +271,15 @@ router.post('/sentTopUp', (req, res, next) => {
     const config = {
         service: 'gmail',
         auth: {
-            user: 'anes85594@gmail.com',
-            pass: 'qjxh jeyw loyo veif'
+            user: 'Silamarketingg@gmail.com',
+            pass: 'nqct ydan hhjv ohgz'
         }
     }
 
     const transporter = nodemailer.createTransport(config);
 
     const message = {
-        from: 'anes85594@gmail.com',
+        from: 'Silamarketingg@gmail.com',
         to: userEmail,
         subject: 'Your Top up has been sent!',
         html: `<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -519,15 +519,15 @@ router.post('/acceptedTopUp', (req, res, next) => {
     const config = {
         service: 'gmail',
         auth: {
-            user: 'anes85594@gmail.com',
-            pass: 'qjxh jeyw loyo veif'
+            user: 'Silamarketingg@gmail.com',
+            pass: 'nqct ydan hhjv ohgz'
         }
     }
 
     const transporter = nodemailer.createTransport(config);
 
     const message = {
-        from: 'anes85594@gmail.com',
+        from: 'Silamarketingg@gmail.com',
         to: userEmail,
         subject: 'Your Top up has been Accepted!',
         html: `<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -766,15 +766,15 @@ router.post('/ad', (req, res, next) => {
     const config = {
         service: 'gmail',
         auth: {
-            user: 'anes85594@gmail.com',
-            pass: 'qjxh jeyw loyo veif'
+            user: 'Silamarketingg@gmail.com',
+            pass: 'nqct ydan hhjv ohgz'
         }
     }
 
     const transporter = nodemailer.createTransport(config);
 
     const message = {
-        from: 'anes85594@gmail.com',
+        from: 'Silamarketingg@gmail.com',
         to: userEmail,
         subject: 'Purchase received!',
         html: `<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -1040,15 +1040,15 @@ router.post('/mediaBuying', (req, res, next) => {
     const config = {
         service: 'gmail',
         auth: {
-            user: 'anes85594@gmail.com',
-            pass: 'qjxh jeyw loyo veif'
+            user: 'Silamarketingg@gmail.com',
+            pass: 'nqct ydan hhjv ohgz'
         }
     }
 
     const transporter = nodemailer.createTransport(config);
 
     const message = {
-        from: 'anes85594@gmail.com',
+        from: 'Silamarketingg@gmail.com',
         to: userEmail,
         subject: 'Welcome to media buying!',
         html: `<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
