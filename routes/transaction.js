@@ -42,7 +42,7 @@ router.post('/', upload.single('photoProof'), async (req, res, next) => {
         currency: req.body.currency,
         paymentMethod: req.body.paymentMethod,
         chargeAmount: req.body.chargeAmount,
-        transactionID: req.body.transactionID,
+        transactionID: req.body.transactionID || '',
         photoProof: req.file.path,
         email: req.body.email,
         phoneNumber: req.body.phoneNumber,

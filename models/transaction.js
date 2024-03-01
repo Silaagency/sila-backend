@@ -19,8 +19,7 @@ const transactionSchema = new Schema ({
         required: true
     },
     transactionID: {
-        type: String,
-        required: true
+        type: String
     },
     photoProof: {
         type: String,
