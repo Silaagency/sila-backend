@@ -234,4 +234,23 @@ router.patch('/eurWallet/:id', async (req, res, next) => {
     }
 });
 
+router.patch('/eCommerce/:id', async (req, res, next) => {
+    const userID = req.params.id;
+    const update = req.body;
+
+    update.eCommerceFormation = req.body.eCommerceFormation;
+
+    try {
+        const docs = await users.findByIdAndUpdate(userID, {$set: update}, {new: true});
+        res.json({
+            Success: 'Updated formation!',
+            update: docs
+        })
+    } catch (err) {
+        res.json({
+            Error: err.message
+        })
+    }
+});
+
 module.exports = router;
