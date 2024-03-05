@@ -14,6 +14,9 @@ const paymentHistorySchema = new Schema ({
         type: String,
         required: true
     },
+    service: {
+        type: String
+    },
     date: {
         type: Date,
         default: Date.now

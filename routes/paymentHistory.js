@@ -23,7 +23,8 @@ router.post('/', async (req, res, next) => {
     const paymentToPost = ({
         userID: req.body.userID,
         type: req.body.type,
-        amount: req.body.amount
+        amount: req.body.amount,
+        service: req.body.service || 'All'
     });
 
     try {
