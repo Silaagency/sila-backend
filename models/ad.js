@@ -54,6 +54,9 @@ const adSchema = new Schema ({
             required: true
         }
     }],
+    adID: {
+        type: String
+    },
     remark: {
         type: String
     },

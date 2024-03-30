@@ -54,6 +54,7 @@ router.post('/', upload.single('shopifyScreenshot'), async (req, res, next) => {
             adDeposit: x.adDeposit,
             licenseName: x.licenseName
         })),
+        adID: req.body.adID || '',
         remark: req.body.remark || '',
         totalCost: req.body.totalCost,
         userID: req.body.userID,
@@ -101,6 +102,25 @@ router.delete('/:id', async (req, res, next) => {
         res.json({
             Success: 'AD deleted successfully!',
             deleted: docs
+        })
+    } catch (err) {
+        res.json({
+            Error: err.message
+        })
+    }
+});
+
+router.patch('/adAccountID/:id', async (req, res, next) => {
+    const adID = req.params.id;
+    const update = req.body;
+
+    update.adAccountID = req.body.adAccountID;
+
+    try {
+        const docs = await ad.findByIdAndUpdate(adID, {$set: update}, {new: true});
+        res.json({
+            Success: 'Updated successfully!',
+            update: docs
         })
     } catch (err) {
         res.json({

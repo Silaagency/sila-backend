@@ -35,6 +35,9 @@ const adVipSchema = new Schema ({
             required: true
         }
     }],
+    adID: {
+        type: String
+    },
     remark: {
         type: String
     },
