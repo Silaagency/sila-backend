@@ -30,10 +30,11 @@ const usersSchema = new Schema ({
         type: Number,
         default: 0
     },
-    eCommerceFormation: {
-        type: Boolean,
-        default: false
-    },
+    formations: [{
+        formationId: {
+            type: String
+        }
+    }],
     date: {
         type: Date,
         default: Date.now

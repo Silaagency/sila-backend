@@ -57,7 +57,8 @@ router.post('/', upload.single('profilePhoto'), async (req, res, next) => {
         email: req.body.email,
         password: req.body.password,
         phoneNumber: req.body.phoneNumber || 0,
-        profilePhoto: req.file ? req.file.path : 'https://cdn-icons-png.freepik.com/512/1144/1144709.png?uid=R124852356&ga=GA1.1.528102401.1697579373&'
+        profilePhoto: req.file ? req.file.path : 'https://cdn-icons-png.freepik.com/512/1144/1144709.png?uid=R124852356&ga=GA1.1.528102401.1697579373&',
+        formations: req.body.formations || []
     });
 
     try {
@@ -234,22 +235,25 @@ router.patch('/eurWallet/:id', async (req, res, next) => {
     }
 });
 
-router.patch('/eCommerce/:id', async (req, res, next) => {
-    const userID = req.params.id;
-    const update = req.body;
-
-    update.eCommerceFormation = req.body.eCommerceFormation;
-
+router.post('/pushFormation/:id', async (req, res, next) => {
     try {
-        const docs = await users.findByIdAndUpdate(userID, {$set: update}, {new: true});
+        const userId = req.params.id;
+        const dataToPush = {
+            formationId: req.body.formationId
+        };
+
+        const User = await users.findById(userId);
+        User.formations.push(dataToPush);
+        await User.save();
+
         res.json({
-            Success: 'Updated formation!',
-            update: docs
-        })
+            Success: 'Formation pushed successfully!',
+            update: User
+        });
     } catch (err) {
         res.json({
             Error: err.message
-        })
+        });
     }
 });
 

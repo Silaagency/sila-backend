@@ -23,6 +23,7 @@ const creativeLink = require('./routes/creativeLink');
 const mediaLink = require('./routes/mediaLink');
 const orderFormation = require('./routes/orderFormation');
 const adVip = require('./routes/adVip');
+const formation = require('./routes/formation');
 //
 
 
@@ -58,6 +59,7 @@ app.use('/creativeLink', creativeLink);
 app.use('/mediaLink', mediaLink);
 app.use('/orderFormation', orderFormation);
 app.use('/adVip', adVip);
+app.use('/formation', formation);
 //
 
 
