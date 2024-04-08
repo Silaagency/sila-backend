@@ -40,6 +40,7 @@ const upload = multer({ storage: storage });
 router.post('/', upload.single('shopifyScreenshot'), async (req, res, next) => {
     const adToPost = ({
         license: req.body.license,
+        pageURL: req.body.pageURL,
         website: req.body.website,
         shopifyShop: req.body.shopifyShop,
         shopifyScreenshot: req.file ? req.file.path : '',

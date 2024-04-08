@@ -10,7 +10,7 @@ const ad = require('../models/ad');
 
 router.get('/', async (req, res, next) => {
     try {
-        const docs = await ad.find();
+        const docs = await ad.find().sort({ date: -1 });
         res.json({
             count: docs.length,
             ADs: docs

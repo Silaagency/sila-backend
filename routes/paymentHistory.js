@@ -7,7 +7,7 @@ const paymentHistory = require('../models/paymentHistory');
 
 router.get('/', async (req, res, next) => {
     try {
-        const docs = await paymentHistory.find();
+        const docs = await paymentHistory.find().sort({ date: -1 });
         res.json({
             count: docs.length,
             history: docs

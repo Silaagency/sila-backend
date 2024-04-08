@@ -257,4 +257,232 @@ router.post('/pushFormation/:id', async (req, res, next) => {
     }
 });
 
+router.patch('/changeAdCommision1/:id', async (req, res, next) => {
+    try {
+        const userId = req.params.id;
+        const update = req.body;
+
+        update.adCommision1 = req.body.adCommision1;
+
+        const docs = await users.findByIdAndUpdate(userId, {$set: update}, {new: true});
+        res.json({
+            Success: 'Updated!',
+            update: docs
+        });
+    } catch (err) {
+        res.json({
+            Error: err.message
+        });
+    }
+});
+
+router.patch('/changeAdCommision3/:id', async (req, res, next) => {
+    try {
+        const userId = req.params.id;
+        const update = req.body;
+
+        update.adCommision3 = req.body.adCommision3;
+
+        const docs = await users.findByIdAndUpdate(userId, {$set: update}, {new: true});
+        res.json({
+            Success: 'Updated!',
+            update: docs
+        });
+    } catch (err) {
+        res.json({
+            Error: err.message
+        });
+    }
+});
+
+router.patch('/changeAdCommision5/:id', async (req, res, next) => {
+    try {
+        const userId = req.params.id;
+        const update = req.body;
+
+        update.adCommision5 = req.body.adCommision5;
+
+        const docs = await users.findByIdAndUpdate(userId, {$set: update}, {new: true});
+        res.json({
+            Success: 'Updated!',
+            update: docs
+        });
+    } catch (err) {
+        res.json({
+            Error: err.message
+        });
+    }
+});
+
+router.patch('/changeAdCommisionVip1/:id', async (req, res, next) => {
+    try {
+        const userId = req.params.id;
+        const update = req.body;
+
+        update.adCommisionVip1 = req.body.adCommisionVip1;
+
+        const docs = await users.findByIdAndUpdate(userId, {$set: update}, {new: true});
+        res.json({
+            Success: 'Updated!',
+            update: docs
+        });
+    } catch (err) {
+        res.json({
+            Error: err.message
+        });
+    }
+});
+
+router.patch('/changeAdCommisionVip3/:id', async (req, res, next) => {
+    try {
+        const userId = req.params.id;
+        const update = req.body;
+
+        update.adCommisionVip3 = req.body.adCommisionVip3;
+
+        const docs = await users.findByIdAndUpdate(userId, {$set: update}, {new: true});
+        res.json({
+            Success: 'Updated!',
+            update: docs
+        });
+    } catch (err) {
+        res.json({
+            Error: err.message
+        });
+    }
+});
+
+router.patch('/changeAdCommisionVip5/:id', async (req, res, next) => {
+    try {
+        const userId = req.params.id;
+        const update = req.body;
+
+        update.adCommisionVip5 = req.body.adCommisionVip5;
+
+        const docs = await users.findByIdAndUpdate(userId, {$set: update}, {new: true});
+        res.json({
+            Success: 'Updated!',
+            update: docs
+        });
+    } catch (err) {
+        res.json({
+            Error: err.message
+        });
+    }
+});
+
+router.patch('/changeAd1Price/:id', async (req, res, next) => {
+    try {
+        const userId = req.params.id;
+        const update = req.body;
+
+        update.ad1Price = req.body.ad1Price;
+
+        const docs = await users.findByIdAndUpdate(userId, {$set: update}, {new: true});
+        res.json({
+            Success: 'Updated!',
+            update: docs
+        });
+    } catch (err) {
+        res.json({
+            Error: err.message
+        });
+    }
+});
+
+router.patch('/changeAd3Price/:id', async (req, res, next) => {
+    try {
+        const userId = req.params.id;
+        const update = req.body;
+
+        update.ad3Price = req.body.ad3Price;
+
+        const docs = await users.findByIdAndUpdate(userId, {$set: update}, {new: true});
+        res.json({
+            Success: 'Updated!',
+            update: docs
+        });
+    } catch (err) {
+        res.json({
+            Error: err.message
+        });
+    }
+});
+
+router.patch('/changeAd5Price/:id', async (req, res, next) => {
+    try {
+        const userId = req.params.id;
+        const update = req.body;
+
+        update.ad5Price = req.body.ad5Price;
+
+        const docs = await users.findByIdAndUpdate(userId, {$set: update}, {new: true});
+        res.json({
+            Success: 'Updated!',
+            update: docs
+        });
+    } catch (err) {
+        res.json({
+            Error: err.message
+        });
+    }
+});
+
+router.patch('/changeVipAd1Price/:id', async (req, res, next) => {
+    try {
+        const userId = req.params.id;
+        const update = req.body;
+
+        update.vipAd1Price = req.body.vipAd1Price;
+
+        const docs = await users.findByIdAndUpdate(userId, {$set: update}, {new: true});
+        res.json({
+            Success: 'Updated!',
+            update: docs
+        });
+    } catch (err) {
+        res.json({
+            Error: err.message
+        });
+    }
+});
+
+router.patch('/changeVipAd3Price/:id', async (req, res, next) => {
+    try {
+        const userId = req.params.id;
+        const update = req.body;
+
+        update.vipAd3Price = req.body.vipAd3Price;
+
+        const docs = await users.findByIdAndUpdate(userId, {$set: update}, {new: true});
+        res.json({
+            Success: 'Updated!',
+            update: docs
+        });
+    } catch (err) {
+        res.json({
+            Error: err.message
+        });
+    }
+});
+
+router.patch('/changeVipAd5Price/:id', async (req, res, next) => {
+    try {
+        const userId = req.params.id;
+        const update = req.body;
+
+        update.vipAd5Price = req.body.vipAd5Price;
+
+        const docs = await users.findByIdAndUpdate(userId, {$set: update}, {new: true});
+        res.json({
+            Success: 'Updated!',
+            update: docs
+        });
+    } catch (err) {
+        res.json({
+            Error: err.message
+        });
+    }
+});
+
 module.exports = router;

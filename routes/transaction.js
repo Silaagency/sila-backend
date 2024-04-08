@@ -10,7 +10,7 @@ const transaction = require('../models/transaction');
 
 router.get('/', async (req, res, next) => {
     try {
-        const docs = await transaction.find();
+        const docs = await transaction.find().sort({ date: -1 });
         res.json({
             count: docs.length,
             transactions: docs

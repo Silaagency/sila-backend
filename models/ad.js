@@ -79,6 +79,10 @@ const adSchema = new Schema ({
     status: {
         type: String,
         default: 'Pending'
+    },
+    date: {
+        type: Date,
+        default: Date.now
     }
 });
 
